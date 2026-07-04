@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  --bg: #050505;
+  --cyan: #00F0FF;
+  --purple: #BC13FE;
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --f-sans: 'Helvetica Neue', Arial, sans-serif;
+}
+
+@keyframes holographic-flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 0.99;
+    filter: hue-rotate(0deg) saturate(1);
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+    filter: hue-rotate(90deg) saturate(1.5);
+  }
+}
+
+@keyframes scanning {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+@keyframes orbit-cw {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes orbit-ccw {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-hologram {
+  animation: float-slow 6s ease-in-out infinite, holographic-flicker 12s linear infinite;
+}
+
+.animate-scan {
+  animation: scanning 3s linear infinite;
+}
+
+.animate-orbit-cw {
+  animation: orbit-cw 20s linear infinite;
+}
+
+.animate-orbit-ccw {
+  animation: orbit-ccw 25s linear infinite;
+}
+
+/* Geometric Balance theme utilities */
+.geometric-bg {
+  background: radial-gradient(circle at 50% 50%, #111827 0%, #050505 100%);
+}
+
+.status-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.status-dot-cyan {
+  background: #00F0FF;
+  box-shadow: 0 0 10px #00F0FF, 0 0 20px #00F0FF;
+}
+
+.core-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #00F0FF;
+  opacity: 0.2;
+}
+
+.core-orb {
+  width: 130px;
+  height: 130px;
+  background: radial-gradient(circle at 30% 30%, #00F0FF, #BC13FE);
+  border-radius: 50%;
+  box-shadow: 0 0 80px rgba(0, 240, 255, 0.4), 0 0 120px rgba(188, 19, 254, 0.2);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.core-glow {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, transparent 70%);
+}
+
+/* Custom glow effect */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+}
+.glow-cyan-lg {
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.6);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(5, 5, 5, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 255, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.6);
+}
+
